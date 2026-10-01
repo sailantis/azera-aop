@@ -17,10 +17,10 @@ use Azera\Aop\Advice;
  * request.
  *
  * Example:
- * <code>
+ * ```php
  * #[Idempotent(key: 'charge_{requestId}', ttl: 3600)]
  * public function chargeCard(string $requestId, int $amount): array { ... }
- * </code>
+ * ```
  */
 #[\Attribute(\Attribute::TARGET_METHOD)]
 class Idempotent extends Advice

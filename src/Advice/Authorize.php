@@ -15,13 +15,13 @@ use Azera\Aop\Advice;
  * `AuthorizationException` is thrown (typically surfaced as HTTP 403).
  *
  * Example:
- * <code>
+ * ```php
  * #[Authorize(ability: 'billing.manage')]
  * public function refund(int $invoiceId): void { ... }
  *
  * #[Authorize(roles: ['admin'])]
  * public function deleteUser(int $id): void { ... }
- * </code>
+ * ```
  */
 #[\Attribute(\Attribute::TARGET_METHOD)]
 class Authorize extends Advice

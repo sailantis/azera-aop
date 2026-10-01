@@ -15,10 +15,10 @@ use Azera\Aop\Advice;
  * throws a `ValidationException` when errors are returned.
  *
  * Example:
- * <code>
+ * ```php
  * #[Validate(validator: OrderValidator::class)]
  * public function createOrder(array $data): Order { ... }
- * </code>
+ * ```
  */
 #[\Attribute(\Attribute::TARGET_METHOD)]
 class Validate extends Advice

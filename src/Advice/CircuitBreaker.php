@@ -17,10 +17,10 @@ use Azera\Aop\Advice;
  * closes, on failure it re-opens.
  *
  * Example:
- * <code>
+ * ```php
  * #[CircuitBreaker(failThreshold: 5, resetTimeout: 30)]
  * public function callExternalApi(): Response { ... }
- * </code>
+ * ```
  */
 #[\Attribute(\Attribute::TARGET_METHOD)]
 class CircuitBreaker extends Advice

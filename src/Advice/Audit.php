@@ -15,10 +15,10 @@ use Azera\Aop\Advice;
  * is logged but re-thrown.
  *
  * Example:
- * <code>
+ * ```php
  * #[Audit(action: 'user.delete', logArgs: ['id'])]
  * public function deleteUser(int $id): void { ... }
- * </code>
+ * ```
  */
 #[\Attribute(\Attribute::TARGET_METHOD)]
 class Audit extends Advice

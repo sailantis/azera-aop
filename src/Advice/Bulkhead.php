@@ -15,10 +15,10 @@ use Azera\Aop\Advice;
  * {@see \Azera\Aop\Interceptor\BulkheadException} is thrown.
  *
  * Example:
- * <code>
+ * ```php
  * #[Bulkhead(max: 10, ttl: 30)]
  * public function heavyJob(): void { ... }
- * </code>
+ * ```
  */
 #[\Attribute(\Attribute::TARGET_METHOD)]
 class Bulkhead extends Advice

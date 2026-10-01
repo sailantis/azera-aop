@@ -16,10 +16,10 @@ use Azera\Aop\Advice;
  * so limits can be per-user/per-IP.
  *
  * Example:
- * <code>
+ * ```php
  * #[Throttle(key: 'api:{userId}', max: 100, per: 60)]
  * public function callApi(int $userId): Response { ... }
- * </code>
+ * ```
  */
 #[\Attribute(\Attribute::TARGET_METHOD)]
 class Throttle extends Advice
