@@ -13,20 +13,20 @@ The framework ships the AOP engine (`ProxyFactory`, `Pipeline`, `Advice`, `Inter
 - `Azera\Aop\Advice\Bulkhead` + `BulkheadInterceptor` — concurrency limit via counting cache key.
 - `Azera\Aop\Advice\Trace` + `TraceInterceptor` — span start/end/duration around the method.
 
-Each is an independent attribute + interceptor pair. Register with `AppContext::registerInterceptor($adviceClass, $interceptor)` and mark services `#[Advised]`.
-
 ## Installation
 
-```json
-{
-    "repositories": [
-        { "type": "path", "url": "../azera-aop" },
-        { "type": "path", "url": "../azera-auth" },
-        { "type": "path", "url": "../azera-cache" }
-    ],
-    "require": { "sailantis/azera-aop": "dev-main" }
-}
+```bash
+composer require sailantis/azera-aop
 ```
+
+Optional companions, needed only by the interceptors that delegate to them:
+
+| Interceptor | Requires |
+|---|---|
+| `AuthorizeInterceptor` | `sailantis/azera-auth` (provides `Gate`) |
+| `ThrottleInterceptor`, `IdempotentInterceptor`, `BulkheadInterceptor`, `CircuitBreakerInterceptor` | a PSR-16 cache; `sailantis/azera-cache` provides the backends |
+
+Each is an independent attribute + interceptor pair. Register with `AppContext::registerInterceptor($adviceClass, $interceptor)` and mark services `#[Advised]`.
 
 ## License
 
